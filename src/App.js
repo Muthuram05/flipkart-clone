@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
 
-function App() {
+const queryClient = new QueryClient()
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <QueryClientProvider client={queryClient}>
+      <Example />
+    </QueryClientProvider>
+  )
 }
 
-export default App;
+function Example() {
+  const { isLoading, error, data } = useQuery('repoData', () =>
+    fetch('https://jsonplaceholder.typicode.com/todos/').then(res =>
+      res.json(),
+      console.log(data)
+    )
+  )
+
+  if (isLoading) return 'Loading...'
+
+  if (error) return 'An error has occurred: ' + error.message
+
+  return (
+    <div>
+      <h1>{data[0].title}</h1>
+      <p>{data.description}</p>
+      <strong>👀 {data.subscribers_count}</strong>{' '}
+      <strong>✨ {data.stargazers_count}</strong>{' '}
+      <strong>🍴 {data.forks_count}</strong>
+    </div>
+  )
+}
