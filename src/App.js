@@ -1,34 +1,23 @@
-import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
-
-const queryClient = new QueryClient()
-
-export default function App() {
+import React from 'react'
+import Nav from './component/Nav'
+import Footer from './component/Footer'
+import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import NoPage from './component/NoPage'
+import Contact from './component/Contact'
+const App = () => {
   return (
-    <QueryClientProvider client={queryClient}>
-      <Example />
-    </QueryClientProvider>
+    <>
+    <Nav />
+    <BrowserRouter >
+        <Routes>
+        <Route index element={<NoPage />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="*" element={<NoPage />} /> 
+        </Routes>
+    </BrowserRouter>
+    <Footer />
+    </>
   )
 }
 
-function Example() {
-  const { isLoading, error, data } = useQuery('repoData', () =>
-    fetch('https://jsonplaceholder.typicode.com/todos/').then(res =>
-      res.json(),
-      console.log(data)
-    )
-  )
-
-  if (isLoading) return 'Loading...'
-
-  if (error) return 'An error has occurred: ' + error.message
-
-  return (
-    <div>
-      <h1>{data[0].title}</h1>
-      <p>{data.description}</p>
-      <strong>👀 {data.subscribers_count}</strong>{' '}
-      <strong>✨ {data.stargazers_count}</strong>{' '}
-      <strong>🍴 {data.forks_count}</strong>
-    </div>
-  )
-}
+export default App

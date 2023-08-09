@@ -1,17 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import BearCounter from './App';
-import Exp from './Test';
-
-
-
+import App from './App';
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <>
-    {/* <Test /> */}
-<Exp />
-<BearCounter />
-  </>
-
-);
+root.render( <App />);
 
