@@ -1,0 +1,17 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --blue-color: #2874f0;
+    --white-color: #ffffff;
+    --yellow-color: #f8e208;
+    --dark-color:#172337;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style-type: none;
+}

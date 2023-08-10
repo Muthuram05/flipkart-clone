@@ -1,0 +1,16 @@
+.Footer{
+    width: 100%;
+    background-color: var(--dark-color);
+    display: flex;
+    flex-direction: column;
+}
+.Footer .content{
+    display: flex;
+}
+.content .subitem{
+    display: flex;
+    flex-direction: column;
+}
+.Footer .copyright{
+    display: flex;
+}
