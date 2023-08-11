@@ -1,3 +1,82 @@
 .Nav{
     background: var(--blue-color);
+    width: 100%;
+    position: fixed;
+    height: 56px;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Nav .logo{
+    display: flex;
+    width: 45%;
+    height: 100%;
+    align-items: center;
+}
+.Nav .logo a{
+    font-size: 11px;
+    font-style: italic;
+}
+.Nav span{
+    color:var(--yellow-color);
+}
+.Nav .logo input{
+    padding: 0 16px;
+    border-radius: 2px 0 0 2px;
+    border: 0;
+    outline: 0 none;
+    font-size: 14px;
+    height: 36px;
+    width: 80%;
+    margin-left: 20px;
+}
+.Nav .search{
+    height: 36px;
+    width: 30px;
+    background-color: var(--white-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Nav .links{
+    display: flex;
+    width: 30%;
+    height: 100%;
+    margin-left: 40px;
+    align-items: center;
+    justify-content: space-between;
+}
+.Nav .links a{
+    line-height: 20px;
+    font-size: 16px;
+    letter-spacing: .1px;
+    font-weight: 500;
+    color: var(--white-color);
+}
+.bottom-nav{
+    padding-top: 56px;
+    display: flex;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    margin: auto auto;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.bottom-nav img{
+    width: 64px;
+    height: 64px;
+}
+.bottom-nav div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+.bottom-nav div:hover{
+    background-color: red;
+}
+.bottom-nav h1{
+    font-size: 14px;
 }
