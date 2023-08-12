@@ -3,8 +3,8 @@ import React from 'react'
 const FooterItem = ({items}) => {
   return (
     <>
-        {items.map(e=>(
-            <a href='#'>{e}</a>
+        {items.map((e,index)=>(
+            <a href='#' key={index}>{e}</a>
         ))}
     </>
   )

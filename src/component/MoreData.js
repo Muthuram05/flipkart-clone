@@ -1,9 +1,14 @@
 import React from 'react'
 
-const MoreData = () => {
+const MoreData = ({data}) => {
   return (
     <div>
-        <div>Notification</div>
+      {data.map(e=>(
+        <div>
+          {e[0]} 
+          <li color='#fff'>{e[1]}</li>        
+        </div>
+      ))}
     </div>
   )
 }

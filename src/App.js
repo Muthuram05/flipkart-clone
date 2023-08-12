@@ -5,6 +5,8 @@ import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import NoPage from './component/NoPage'
 import Contact from './component/Contact'
 import Home from './component/Home'
+import ShowProduct from './component/ShowProduct'
+
 const App = () => {
   return (
     <>
@@ -13,6 +15,7 @@ const App = () => {
         <Routes>
         <Route index element={<Home />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="products" element={<ShowProduct />} />
         <Route path="*" element={<NoPage />} /> 
         </Routes>
     </BrowserRouter>

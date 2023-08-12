@@ -4,10 +4,8 @@ export const about = [
     "Careers",
     "Flipkart Stories",
     "Press",
-    "Flipkart",
-    "Wholesale",
-    "Corporate",
-    "Information",
+    "Flipkart Wholesale",
+    "Corporate Information",
 ]
 export const help = [
     "Payments",
