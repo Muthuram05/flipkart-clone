@@ -19,6 +19,7 @@ const App = () => {
         <Route path="*" element={<NoPage />} /> 
         </Routes>
     </BrowserRouter>
+   
     <Footer />
     </>
   )

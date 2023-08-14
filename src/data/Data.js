@@ -72,21 +72,21 @@ export const MyAccount = [
     ]
 ];
 
-export const MobilesList = [
+export const Mobiles = [
    {
     id : 'm1',
-    name : "samsung galaxy f04",
-    image:"https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/7/p/9/-original-imaghgbyypzkzvud.jpeg?q=70",
-    rating : "4.2",
-    prize : "8,499",
-    stock : 10
-   },
-   {
-    id : 'm2',
     name : "poco x5",
     image: "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/n/v/2/-original-imagmkjfjwtzhaag.jpeg?q=70",
     rating : "4.2",
     prize : "15,999",
+    stock : 10
+   },
+   {
+    id : 'm2',
+    name : "lyf earth 2",
+    image:"https://rukminim2.flixcart.com/image/312/312/j5zmw7k0/mobile/v/w/g/lyf-earth-2-ls-5021-original-imaew5msjvza6xbz.jpeg?q=70",
+    rating : "3.1",
+    prize : "4,199",
     stock : 10
    },
    {
@@ -147,14 +147,14 @@ export const MobilesList = [
    },
    {
     id : 'm10',
-    name : "lyf earth 2",
-    image:"https://rukminim2.flixcart.com/image/312/312/j5zmw7k0/mobile/v/w/g/lyf-earth-2-ls-5021-original-imaew5msjvza6xbz.jpeg?q=70",
-    rating : "3.1",
-    prize : "4,199",
+    name : "samsung galaxy f04",
+    image:"https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/7/p/9/-original-imaghgbyypzkzvud.jpeg?q=70",
+    rating : "4.2",
+    prize : "8,499",
     stock : 10
    },
 ]
-export const ElectronicList = [
+export const Electronic = [
    {
     id : 'e1',
     name : "hp chromebook",

@@ -1,0 +1,73 @@
+.ListData{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    max-height: 366px;
+    width: 100%;
+    overflow: scroll;
+    height: 366px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.ListData .products-details{
+    min-width: 230px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    
+}
+.ListData .products-details h2{
+    font-size: 30px;
+    line-height: 1.38;
+    font-weight: 400;
+}
+.ListData .products-details button{
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 13px;
+    color: #fff;
+    font-weight: 500;
+    outline: none;
+    border: none;
+    transition: box-shadow .2s ease;
+    cursor: pointer;
+    background-color: var(--blue-color);
+}
+.ListData .products-details img{
+    margin-top: 20px;
+    width: 100%;
+    height: 100px;
+}
+.ListData .products{
+    min-width: 230px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+.ListData .products:hover img{
+    transform: scale(1.1);
+}
+.ListData .products img{
+    width: 150px;
+    height: 170px;
+}
+.ListData .products h2{
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.ListData .products span{
+    margin-top: 15px;
+    color: #388e3c;
+    font-size: 16px;
+}
+.ListData .products h3{
+    margin-top: 12px;
+}

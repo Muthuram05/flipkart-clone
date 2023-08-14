@@ -1,7 +1,7 @@
 import React from 'react'
 import './Footer.css'
 import FooterItem from './FooterItem'
-import { about,help,policy } from '../data/footerData'
+import { about,help,policy,social } from '../data/footerData'
 const Footer = () => {
   return (
     <div className='Footer'>
@@ -21,7 +21,7 @@ const Footer = () => {
           </div>
           <div className='social subitem'>
             <h4>SOCIAL</h4>
-            <FooterItem items={policy}/>
+            <FooterItem items={social}/>
           </div>
         </div>
         <div className='contact-links'>

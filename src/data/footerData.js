@@ -26,3 +26,9 @@ export const policy = [
     "EPR Compliance"
 
 ]
+export const social = [
+   "Facebook",
+    "Twitter",
+    "YouTube",
+
+]
