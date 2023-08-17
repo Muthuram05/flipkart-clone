@@ -1,15 +1,16 @@
 import React from 'react'
-
-const MoreData = ({data}) => {
+import './MoreData.css'
+const MoreData = ({ data }) => {
+  console.log(data)
   return (
-    <div>
-      {data.map(e=>(
-        <div>
-          {e[0]} 
-          <li color='#fff'>{e[1]}</li>        
+    <>
+      {data.map(e => (
+        <div className='tippydata' >
+          <li>{e[0]}</li>
+          <span >{e[1]}</span>
         </div>
       ))}
-    </div>
+    </>
   )
 }
 

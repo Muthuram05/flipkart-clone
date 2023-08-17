@@ -1,5 +1,38 @@
+.ShowProducts{
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+}
+
 .ShowProducts .filters {
-    width: 270px;
+    min-width: 270px;
     min-height: 100px;
+    background-color: red;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.ShowProducts .products{
+    display: flex;
+    flex-wrap: wrap;
+}
+.ShowProducts .products .product{
+    min-width: 300px;
+    min-height: 500px;
+}
+.ShowProducts .products .product img{
+    width: 200px;
+    height: 200px;
+}
+.ShowProducts .products .product h1{
+    font-size: 24px;
+}
+.ShowProducts .products .product #rating{
+    line-height: normal;
+    display: inline-block;
+    color: #fff;
+    padding: 2px 4px 2px 6px;
+    border-radius: 3px;
+    font-weight: 500;
+    font-size: 12px;
+    vertical-align: middle;
+    background-color: #388e3c;
 }
