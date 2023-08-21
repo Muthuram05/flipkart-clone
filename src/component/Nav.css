@@ -7,6 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 100;
 }
 .Nav .logo{
     display: flex;
@@ -51,7 +52,17 @@
     align-items: center;
     justify-content: space-between;
 }
-
+.Nav .links button{
+    color: #2874f0;
+    font-weight: 800;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 2px;
+    height: 32px;
+    padding: 5px 40px;
+    border: 1px solid #dbdbdb;
+}
 .Nav .links a{
     line-height: 20px;
     font-size: 16px;

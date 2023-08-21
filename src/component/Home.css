@@ -1,3 +1,26 @@
 .Home{
     padding: 10px;
 }
+.Home.windowOpen{
+    opacity: 0.5;
+}
+.login{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    color: #212121;
+    margin: 0 auto;
+    border-radius: 2px;
+    height: 528px;
+    max-width: 750px;
+    min-width: 650px;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: fixed;
+    display: flex;
+    gap: 20px;
+}
+.login i{
+    font-size: 38px;
+    cursor: pointer;
+}

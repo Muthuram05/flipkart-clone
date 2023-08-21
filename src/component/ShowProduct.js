@@ -12,7 +12,7 @@ const ShowProduct = () => {
       <div className='products'>
         {state.map((e=>(
           <div key={e.id} className='product'>
-            <img src={e.image}/>
+            <img src={e.image} alt={e.name}/>
             <h1>{e.name}</h1>
             <div>
             <span id='rating'>{e.rating}</span>
