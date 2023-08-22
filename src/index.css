@@ -16,33 +16,33 @@ a {
 li {
   list-style-type: none;
 }
-.ratings {
-    font-size: 1.2rem;
-    color: #fdcc0d;
-  }
-  
-.rating-outer {
-  display: inline-block;
-  position: relative;
-  font-family: FontAwesome;
-  color: #fdcc0d;
-}
 
-.rating-outer::before {
-  content: "\f006 \f006 \f006 \f006 \f006";
+.login{
+  color: #212121;
+  margin: 0 auto;
+  border-radius: 2px;
+  height: 528px;
+  max-width: 750px;
+  min-width: 650px;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  position: fixed;
+  display: flex;
+  gap: 20px;
 }
+.login .shadow{
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
-.rating-inner {
-  position: absolute;
-  top: 0;
-  left: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 0;
 }
-
-.rating-inner::before {
-  content: "\f005 \f005 \f005 \f005 \f005";
-  color: #f8ce0b;
-  width: 20%;
+.login i{
+  font-size: 38px;
+  cursor: pointer;
+}
+.custom-flex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }

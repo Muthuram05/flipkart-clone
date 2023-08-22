@@ -1,0 +1,26 @@
+.Cart{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    min-height: 40vh;
+    padding: 10px;
+    width: 60%;
+    margin: auto;
+}
+.Cart .cart-product{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+.Cart  img{
+    width: 100px;
+    height: 50px;
+    object-fit: contain;
+}
+.Cart  h3{
+    font-size: 20px;
+    text-transform: capitalize;
+}

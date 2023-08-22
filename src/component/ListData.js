@@ -6,7 +6,7 @@ const ListData = ({ name, list }) => {
   const navigate = useNavigate();
   const listProduct = list.slice(0, 7);
   const handleNavigate = () => {
-    navigate("/products", { state: list });
+    navigate("/products", { state: name });
   };
   const handleViewProduct = (data) =>{
     navigate('/viewProduct',{state : data})

@@ -1,0 +1,108 @@
+.ViewProduct{
+    width: 80%;
+    background-color: #fff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    min-height: 40vh;
+    margin: auto auto;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+}
+.ViewProduct .left{
+    display: flex;
+    align-items: start;
+}
+.ViewProduct .left .alter-image div{
+    width: 80px;
+    height: 80px;
+    border: 2px solid #000;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.ViewProduct .left .alter-image div img{
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+.ViewProduct .left img{
+    padding: 10px;
+}
+.ViewProduct .cart{
+    padding: 18px 8px;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+    border: none;
+    float: left;
+    background: #ff9f00;
+    color: var(--color-white);
+    text-transform: uppercase;
+    font-size: 16px;
+    height: 58px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.ViewProduct .buynow{
+    background: #fb641b;
+    padding: 18px 8px;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+    border: none;
+    float: left;
+    color: var(--color-white);
+    text-transform: uppercase;
+    height: 58px;
+    width: 200px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.ViewProduct .right{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.ViewProduct .right .name{
+    text-transform: capitalize;
+    color: #212121;
+    font-size: 24px;
+    font-weight: 400;
+    display: contents;
+}
+.rating{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+.ViewProduct .right .rating span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    padding: 2px 4px 2px 6px;
+    border-radius: 3px;
+    width: 50px;
+    font-weight: 500;
+    font-size: 12px;
+    background-color: #388e3c;
+}
+.ViewProduct .right .prize{
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+.ViewProduct .right .prize .discount{
+    display: flex;
+    gap: 10px;
+}
+.ViewProduct .right .offers{
+    margin-top: 10px;
+}
+.ViewProduct .right .offers div{
+    margin-top: 10px;
+    font-size: 20px;
+}

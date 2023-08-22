@@ -8,6 +8,10 @@
     height: 366px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
+.ListData::-webkit-scrollbar{
+
+    display: none;
+}
 .ListData .products-details{
     min-width: 230px;
     height: 100%;

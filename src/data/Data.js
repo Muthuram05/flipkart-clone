@@ -39,7 +39,7 @@ export const Mobiles = [
     image:
       "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/n/v/2/-original-imagmkjfjwtzhaag.jpeg?q=70",
     rating: "4.2",
-    prize: "15,999",
+    prize: "15999",
     stock: 10,
   },
   {
@@ -48,7 +48,7 @@ export const Mobiles = [
     image:
       "https://rukminim2.flixcart.com/image/312/312/j5zmw7k0/mobile/v/w/g/lyf-earth-2-ls-5021-original-imaew5msjvza6xbz.jpeg?q=70",
     rating: "3.1",
-    prize: "4,199",
+    prize: "4199",
     stock: 10,
   },
   {
@@ -57,7 +57,7 @@ export const Mobiles = [
     image:
       "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/h/h/d/-original-imags487gaqqhcea.jpeg?q=70",
     rating: "4.5",
-    prize: "10,999",
+    prize: "10999",
     stock: 10,
   },
   {
@@ -66,7 +66,7 @@ export const Mobiles = [
     image:
       "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/2/m/o/edge-40-pay40030in-motorola-original-imagpqzchzhg6fex.jpeg?q=70",
     rating: "4.2",
-    prize: "29,999",
+    prize: "29999",
     stock: 10,
   },
   {
@@ -75,7 +75,7 @@ export const Mobiles = [
     image:
       "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/m/o/b/-original-imaghx9qkugtbfrn.jpeg?q=70",
     rating: "4.7",
-    prize: "80,999",
+    prize: "80999",
     stock: 10,
   },
   {
@@ -84,7 +84,7 @@ export const Mobiles = [
     image:
       "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/l/8/d/-original-imagqadpnygfnn2v.jpeg?q=70",
     rating: "4.3",
-    prize: "27,999",
+    prize: "27999",
     stock: 10,
   },
   {
@@ -93,7 +93,7 @@ export const Mobiles = [
     image:
       "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/k/u/n/-original-imagzjhwtfthcmzz.jpeg?q=70",
     rating: "4.4",
-    prize: "13,999",
+    prize: "13999",
     stock: 10,
   },
   {
@@ -101,8 +101,8 @@ export const Mobiles = [
     name: "redmi note 12 11 pro+",
     image:
       "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/0/g/w/note-12-5g-mzb0eiain-redmi-original-imagpgr9ngapjhxq.jpeg?q=70",
-    rating: "4.3",
-    prize: "27,999",
+    rating: "2",
+    prize: "27999",
     stock: 10,
   },
   {
@@ -110,8 +110,8 @@ export const Mobiles = [
     name: "redmi 11 prime",
     image:
       "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/k/h/z/11-prime-mzb0cerin-redmi-original-imagzqvrgdz98jch.jpeg?q=70",
-    rating: "4.3",
-    prize: "13,999",
+    rating: "1",
+    prize: "13999",
     stock: 10,
   },
   {
@@ -120,7 +120,7 @@ export const Mobiles = [
     image:
       "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/7/p/9/-original-imaghgbyypzkzvud.jpeg?q=70",
     rating: "4.2",
-    prize: "8,499",
+    prize: "8499",
     stock: 10,
   },
 ];
@@ -130,8 +130,8 @@ export const Electronic = [
     name: "hp chromebook",
     image:
       "https://rukminim2.flixcart.com/image/312/312/kzogn0w0/computer/j/u/m/14a-ca0504tu-thin-and-light-laptop-hp-original-imagbmt6dsjhwwhz.jpeg?q=70",
-    rating: "3.8",
-    prize: "19,990",
+    rating: "2.8",
+    prize: "19990",
     stock: 0,
   },
   {
@@ -140,7 +140,7 @@ export const Electronic = [
     image:
       "https://rukminim2.flixcart.com/image/312/312/xif0q/computer/y/h/w/-original-imaghzahgukpkyfu.jpeg?q=70",
     rating: "4.4",
-    prize: "57,500",
+    prize: "57500",
     stock: 10,
   },
   {
@@ -148,8 +148,8 @@ export const Electronic = [
     name: "primebook",
     image:
       "https://rukminim2.flixcart.com/image/312/312/xif0q/computer/i/j/k/-original-imagzzsh3afavghf.jpeg?q=70",
-    rating: "4.3",
-    prize: "13,990",
+    rating: "2.3",
+    prize: "13990",
     stock: 10,
   },
   {
@@ -157,8 +157,8 @@ export const Electronic = [
     name: "lenovo v15",
     image:
       "https://rukminim2.flixcart.com/image/312/312/xif0q/computer/b/d/i/-original-imagzhefhc84rmbf.jpeg?q=70",
-    rating: "4.2",
-    prize: "35,990",
+    rating: "3",
+    prize: "35990",
     stock: 10,
   },
   {
@@ -167,7 +167,7 @@ export const Electronic = [
     image:
       "https://rukminim2.flixcart.com/image/312/312/xif0q/computer/d/h/q/-original-imagrmhu8wvhykb7.jpeg?q=70",
     rating: "4.4",
-    prize: "54,999",
+    prize: "54999",
     stock: 10,
   },
   {
@@ -253,7 +253,7 @@ export const Beauty = [
     id: "b5",
     name:"parachute",
     image : "https://rukminim2.flixcart.com/image/612/612/l0bbonk0/hair-oil/m/i/6/-original-imagc5ywfs9ux39g.jpeg?q=70",
-    rating : "4.4",
+    rating : "1",
     prize:"230",
     stock : 7
   },{
@@ -268,7 +268,7 @@ export const Beauty = [
     id: "b7",
     name:"dabur red",
     image : "https://rukminim2.flixcart.com/image/612/612/xif0q/toothpaste/x/3/m/-original-imagsgp5gxzewqun.jpeg?q=70",
-    rating : "4.5",
+    rating : "3",
     prize:"345",
     stock : 7
   },
@@ -319,7 +319,7 @@ export const Furniture = [
         id: "f3",
         name:"office study chairs",
         image:'https://rukminim2.flixcart.com/image/300/300/xif0q/office-study-chair/z/t/2/1-teak-sagun-58-42-js-29-beaatho-121-92-original-imagrwgshgp2bhwv.jpeg?q=70',
-        rating: "4.3",
+        rating: "2",
         prize: 18900,
         stock: 7
     },
@@ -327,7 +327,7 @@ export const Furniture = [
         id: "f4",
         name:"wardrobes",
         image:'https://rukminim2.flixcart.com/image/300/300/keg02a80/wardrobe-closet/f/y/f/particle-board-bewtri000500800620-kurlon-wenge-original-imafv49kgfrmmxbq.jpeg?q=70',
-        rating: "4.9",
+        rating: "1",
         prize: 4999,
         stock: 7
     },
@@ -340,3 +340,49 @@ export const Furniture = [
         stock: 7
     }
 ]
+export const BottomNavData = [
+  {
+    name : 'Grocery',
+    image: 'https://rukminim2.flixcart.com/flap/128/128/image/29327f40e9c4d26b.png',
+  },
+  {
+    name: 'Mobiles',
+    image:'https://rukminim2.flixcart.com/flap/128/128/image/22fddf3c7da4c4f4.png'
+  },
+  {
+    name : 'Fashion',
+    image: 'https://rukminim2.flixcart.com/fk-p-flap/128/128/image/0d75b34f7d8fbcb3.png'
+  },
+  {
+    name: 'Electronic',
+    image : 'https://rukminim2.flixcart.com/flap/128/128/image/69c6589653afdb9a.png'
+  },
+  {
+    name: 'Furniture',
+    image: 'https://rukminim2.flixcart.com/flap/128/128/image/ab7e2b022a4587dd.jpg?q=100'
+  },
+  {
+    name:'Appliances',
+    image:'https://rukminim2.flixcart.com/flap/128/128/image/0ff199d1bd27eb98.png'
+  },
+  {
+    name:'Travel',
+    image: 'https://rukminim2.flixcart.com/flap/128/128/image/71050627a56b4693.png?q=100'
+  },
+  {
+    name:'Beauty',
+    image:'https://rukminim2.flixcart.com/flap/128/128/image/dff3f7adcf3a90c6.png?q=100'
+  },
+  {
+    name:'Two Wheelers',
+    image:'https://rukminim2.flixcart.com/fk-p-flap/128/128/image/05d708653beff580.png?q=100'
+  }
+]
+
+
+export  const allData = {
+  Mobiles,
+  Electronic,
+  Beauty,
+  Furniture
+}

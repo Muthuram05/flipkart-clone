@@ -3,7 +3,6 @@
     display: flex;
     align-items: center;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-        
 }
 .Login .left{
     height: 100%;
@@ -12,9 +11,9 @@
     color: #fff;
     padding: 40px 33px;
     font-size: 15px;
-    min-height: 528px;
-    
+    min-height: 528px;   
 }
+
 .Login h1{
     font-size: 28px;
     font-weight: 500;
@@ -24,6 +23,11 @@
     margin-top: 16px;
     line-height: 150%;
     color: #dbdbdb;
+}
+.Login .left img{
+    object-fit: fill;
+    bottom: 40px;
+    position: fixed;
 }
 .Login .right{
     width: 60%;
@@ -39,9 +43,11 @@
     font-size: inherit;
     background: #fff;
     border: none;
+    outline: none;
     border-bottom: 1px solid #e0e0e0;
 }
 .Login .right p{
+    padding-top: 12px;
     color: #878787;
     font-size: 12px;
     font-weight: 400;
@@ -51,6 +57,8 @@
     cursor: pointer;
 }
 .Login .right button{
+    margin-top: 12px;
+    cursor: pointer;
     background: #fb641b;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
     border: none;
@@ -60,5 +68,11 @@
     height: 48px;
     font-size: 15px;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+}
+.Login .right div{
+    color: #2874f0;
+    padding-top: 10px;
+    text-align: center;
+    cursor: pointer;
 }
 
