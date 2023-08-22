@@ -14,7 +14,8 @@ const Login = (props) => {
     if(data){
       toast("Login Sucessfully");
       setloginWindow();
-      setUser(phoneNo)
+      setUser(phoneNo);
+      localStorage.setItem('currentUser',phoneNo)
     }
     else{
       toast("Invalid user");

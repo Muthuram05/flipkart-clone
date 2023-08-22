@@ -13,13 +13,22 @@ export const productsStore = create((set, get) => ({
   Furniture,
   cartData: [
     {
-      id: "b6",
-      name: "himalaya paste",
+      id: "m4",
+      name: "motorola edge 40",
       image:
-        "https://rukminim2.flixcart.com/image/612/612/xif0q/toothpaste/d/1/y/300-complete-care-toothpaste-2nx150g-2-herbal-himalaya-original-imagn2w6xzyxhfgh.jpeg?q=70",
-      rating: "4.3",
-      prize: "90",
-      stock: 7,
+        "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/2/m/o/edge-40-pay40030in-motorola-original-imagpqzchzhg6fex.jpeg?q=70",
+      rating: "4.2",
+      prize: "29999",
+      stock: 10,
+    },
+    {
+      id: "m5",
+      name: "apple iphone 14 plus",
+      image:
+        "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/m/o/b/-original-imaghx9qkugtbfrn.jpeg?q=70",
+      rating: "4.7",
+      prize: "80999",
+      stock: 10,
     },
   ],
   setloginWindow: () => set((state) => ({ loginWindow: !state.loginWindow })),
@@ -28,11 +37,15 @@ export const productsStore = create((set, get) => ({
 
 export const userStore = create((set, get) => ({
   currentUser: null,
-  users: ["7639490537", "9791563562", "8056591833"],
+  users: [],
+  getUser: (data) => {
+    set((state) => ({ users: data }));
+  },
   setUser: (data) => {
     set((state) => ({ currentUser: data }));
   },
   newUser: (data) => {
+    console.log(get());
     set((state) => ({ users: [...state.users, data] }));
   },
   isUserPresent: (user) => {

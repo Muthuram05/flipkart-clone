@@ -44,6 +44,10 @@
     align-items: center;
     justify-content: center;
 }
+.moreData .profile-icon{
+    display: block;
+    color: #fff;
+}
 .Nav .links{
     display: flex;
     width: 30%;
@@ -82,7 +86,6 @@
     padding-top: 56px;
     display: flex;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    margin: auto auto;
     align-items: center;
     justify-content: space-evenly;
 }
@@ -102,4 +105,29 @@
 }
 .bottom-nav h1{
     font-size: 14px;
+}
+@media (max-width:900px){
+    .hide{
+        display: none;
+    }
+    .bottom-nav{
+        overflow: scroll;
+        justify-content: center;
+    }
+}
+@media (max-width: 800px){
+    .Nav .logo{
+        width: 55%;
+    }
+   
+    .bottom-nav::-webkit-scrollbar{
+        display: none;
+    }
+    .bottom-nav div{
+        margin: 10px;
+    }
+    
+}
+@media (max-width: 500px){
+
 }

@@ -1,29 +1,48 @@
-import React from "react";
-import { productsStore } from "../store/store";
+import React, { useEffect,useState } from "react";
+import { productsStore, userStore } from "../store/store";
 import "./Cart.css";
 const Cart = () => {
+  useEffect(() => {
+    document.title = "Shopping Cart | Flipkart.com";
+  }, []);
+  const currentUser = userStore((state) => state.currentUser)
   const cartData = productsStore((state) => state.cartData);
-  console.log(cartData.length);
+  // const fetchCartData = () => {
+  //   console.log(localStorage.getItem(currentUser));
+
+  // }
+  const [value,setValue] = useState(1);
+  const Add = (count) =>{
+    console.log(count)
+    if(count > value){
+      setValue((pre)=>pre + 1)
+    }
+    
+  }
+  const Sub = (count) =>{
+
+  }
   return (
     <div className="Cart">
-      <table>
-        <tr>
-          <td>Image</td>
-          <td>Product Name</td>
-          <td>Prize</td>
-          <td>Rating</td>
-        </tr>
-        {cartData.map((e) => (
-          <tr key={e.id}>
-            <td><img src={e.image} alt={e.name} /></td>
-            <td ><h3>{e.name}</h3></td>
-            <td>{e.prize}</td>
-            <td>{e.rating}</td>
-          </tr>
-        ))}
-      </table>
-
-      {/* {cartData > 0 ? null : <p>No Items in Cart</p>} */}
+      {cartData.map((e) => (
+        <div key={e.id} className="cart-product">
+          <div className="cartProduct-image"><img src={e.image} alt={e.name} /></div>
+          <div className="cartProduct-name"><h3>{e.name}</h3></div>
+          <div className="cartProduct-prize"><p>{e.prize}</p></div>
+          <div className="cartProduct-stock"><p>{e.stock}</p></div>     
+          <div className="custom-flex ">
+            <p>Remove</p>
+            <div>
+              <button onClick={()=> Sub(e.stock)}>-</button>
+              <button >{value}</button>
+              <button onClick={()=> Add(e.stock)}>+</button>
+            </div>  
+          </div>   
+        </div>
+      ))}
+      <div className="order">
+        <button>Place Order</button>
+      </div>
     </div>
   );
 };

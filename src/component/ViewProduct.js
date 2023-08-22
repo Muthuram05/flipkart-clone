@@ -15,6 +15,8 @@ const ViewProduct = () => {
     toast("Added to cart");
   }
   return (
+    <>
+    {state ? 
     <div className="ViewProduct">
       <div className="left">
         <div className="alter-image">
@@ -84,7 +86,8 @@ const ViewProduct = () => {
           </div>
         </div>
       </div>
-    </div>
+    </div> : <div className="custom-flex">Invalid Route</div>}
+    </>
   );
 };
 

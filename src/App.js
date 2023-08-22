@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import Nav from "./component/Nav";
 import Footer from "./component/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -9,12 +9,17 @@ import ShowProduct from "./component/ShowProduct";
 import ViewProduct from "./component/ViewProduct";
 import Cart from "./component/Cart";
 import Auth from "./component/Auth";
-import { productsStore } from "./store/store";
+import { productsStore,userStore } from "./store/store";
 import { ToastContainer } from "react-toastify";
 const App = () => {
   const login = productsStore((state) => state.loginWindow);
   const setloginWindow = productsStore((state) => state.setloginWindow);
-
+  const getUser = userStore((state) => state.getUser)
+  const setUser = userStore((state)=>state.setUser)
+  useEffect(()=>{
+    getUser(localStorage.getItem('users') ?? []);
+    setUser(localStorage.getItem('currentUser') ?? null)
+  },[])
   return (
     <>
       <BrowserRouter>

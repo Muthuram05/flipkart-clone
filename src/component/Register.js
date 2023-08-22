@@ -13,6 +13,10 @@ const Register = (props) => {
       toast("Register Sucessfully");
       setloginWindow();
       setUser(data)
+      const preUser = localStorage.getItem('users')
+      console.log(preUser);
+      localStorage.setItem('users',[preUser,data])
+      localStorage.setItem('currentUser',data)
     }
     else{
       toast('Enter valid number')
