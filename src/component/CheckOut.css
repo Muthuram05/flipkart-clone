@@ -1,0 +1,106 @@
+.checkout {
+  min-height: 40vh;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  width: 100%;
+  gap: 20px;
+}
+.checkout .left{
+  min-width: 40%;
+}
+.checkout .right{
+  min-width: 30%;
+}
+.checkout-card {
+  background-color: #fff;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3);
+  min-height: 100px;
+  margin: 14px;
+  padding: 20px;
+}
+.checkout .checkout-card .card{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 10px;
+}
+.checkout .checkout-card .card h2{
+  font-size: 14px;
+}
+.checkout .checkout-card button{
+  background: #fb641b;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+    border: none;
+    color: #fff;
+    width: 40%;
+    height: 40px;
+    cursor: pointer;
+}
+.checkout .checkout-card input{
+  width: 100%;
+    font-size: 14px;
+    border: 1px solid #e0e0e0;
+    outline: none;
+    border-radius: 2px;
+    padding: 20px 16px 10px 13px;
+    box-shadow: none;
+}
+.checkout .number{
+  font-size: 12px;
+    color: #2874f0;
+    background-color: #f0f0f0;
+    border-radius: 2px;
+    padding: 3px 7px;
+    vertical-align: baseline;
+    margin-right: 17px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.checkout .names{
+  color: #878787;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.checkout .right .checkout-card div{
+border-top: 1px solid #e0e0e0;
+    font-weight: 500;
+    font-size: 18px;
+}
+.checkout .right .checkout-card h4{
+  border-top: 1px dashed #e0e0e0;
+    font-weight: 500;
+    font-size: 18px;
+    margin-top: 10px;
+    padding-top: 5px;
+}
+.checkout .right .checkout-card h2{
+  display: block;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #878787;
+    min-height: 47px;
+    border-radius: 2px 2px 0 0;
+}
+.checkout .right .safe{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.checkout .right .safe img{
+  width: 29px;
+    height: 36px;
+}
+@media (max-width: 800px) {
+  .checkout-card {
+    width: 100%;
+  }
+  .checkout{
+    flex-direction: column;
+  }
+}

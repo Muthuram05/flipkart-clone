@@ -129,5 +129,7 @@
     
 }
 @media (max-width: 500px){
-
+    .Nav .links button{
+        padding: 0;
+    }
 }

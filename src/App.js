@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import Nav from "./component/Nav";
 import Footer from "./component/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -9,17 +9,32 @@ import ShowProduct from "./component/ShowProduct";
 import ViewProduct from "./component/ViewProduct";
 import Cart from "./component/Cart";
 import Auth from "./component/Auth";
-import { productsStore,userStore } from "./store/store";
+import { productsStore, userStore } from "./store/store";
 import { ToastContainer } from "react-toastify";
+import CheckOut from "./component/CheckOut";
 const App = () => {
   const login = productsStore((state) => state.loginWindow);
   const setloginWindow = productsStore((state) => state.setloginWindow);
-  const getUser = userStore((state) => state.getUser)
-  const setUser = userStore((state)=>state.setUser)
-  useEffect(()=>{
-    getUser(localStorage.getItem('users') ?? []);
-    setUser(localStorage.getItem('currentUser') ?? null)
-  },[])
+  const getUser = userStore((state) => state.getUser);
+  const setUser = userStore((state) => state.setUser);
+  const setAllCart = productsStore((state) => state.setAllCart);
+  const currentUser = userStore((state)=>state.currentUser)
+  useEffect(() => {
+    getUser(localStorage.getItem("users") ?? []);
+    setUser(localStorage.getItem("currentUser") ?? null);
+    const currentUserInfo = localStorage.getItem("currentUser");
+
+    if (!currentUserInfo) {
+      return;
+    }
+    let cartDataValue = localStorage.getItem(currentUserInfo);
+    if (cartDataValue) {
+      const updatedCartData = JSON.parse(cartDataValue);
+      
+      setAllCart(updatedCartData);
+      
+    }
+  }, [currentUser]);
   return (
     <>
       <BrowserRouter>
@@ -38,6 +53,7 @@ const App = () => {
           <Route path="products" element={<ShowProduct />} />
           <Route path="viewProduct" element={<ViewProduct />} />
           <Route path="cart" element={<Cart />} />
+          <Route path="checkout" element={<CheckOut />} />
           <Route path="*" element={<NoPage />} />
         </Routes>
         <Footer />

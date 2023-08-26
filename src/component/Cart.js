@@ -1,48 +1,55 @@
-import React, { useEffect,useState } from "react";
+import React, { useEffect, useState } from "react";
 import { productsStore, userStore } from "../store/store";
 import "./Cart.css";
+import { useNavigate } from "react-router-dom";
 const Cart = () => {
+  const navigate = useNavigate();
+  const cartData = productsStore((state) => state.cartData);
+  const currentUser = userStore((state) => state.currentUser);
+  const setCart = productsStore((state) => state.setCart);
   useEffect(() => {
     document.title = "Shopping Cart | Flipkart.com";
   }, []);
-  const currentUser = userStore((state) => state.currentUser)
-  const cartData = productsStore((state) => state.cartData);
-  // const fetchCartData = () => {
-  //   console.log(localStorage.getItem(currentUser));
-
-  // }
-  const [value,setValue] = useState(1);
-  const Add = (count) =>{
-    console.log(count)
-    if(count > value){
-      setValue((pre)=>pre + 1)
+  const handleSubmit = (data) => {
+    navigate("/checkout", { state: data });
+  };
+  const removeItem = (e) => {
+    let cartData = JSON.parse(localStorage.getItem(currentUser));
+    const itemExists = cartData.filter((item) => item.id !== e.id);
+    localStorage.setItem(currentUser, JSON.stringify(itemExists));
+    setCart(itemExists);
+    if (cartData.includes(e)) {
+      console.log("present");
     }
-    
-  }
-  const Sub = (count) =>{
-
-  }
+  };
   return (
     <div className="Cart">
       {cartData.map((e) => (
         <div key={e.id} className="cart-product">
-          <div className="cartProduct-image"><img src={e.image} alt={e.name} /></div>
-          <div className="cartProduct-name"><h3>{e.name}</h3></div>
-          <div className="cartProduct-prize"><p>{e.prize}</p></div>
-          <div className="cartProduct-stock"><p>{e.stock}</p></div>     
-          <div className="custom-flex ">
-            <p>Remove</p>
-            <div>
-              <button onClick={()=> Sub(e.stock)}>-</button>
-              <button >{value}</button>
-              <button onClick={()=> Add(e.stock)}>+</button>
-            </div>  
-          </div>   
+          <div className="cartProduct-image">
+            <img src={e.image} alt={e.name} />
+          </div>
+          <div className="cartProduct-name">
+            <h3>{e.name}</h3>
+          </div>
+          <div className="cartProduct-prize">
+            <p>{e.prize}</p>
+          </div>
+          <div className="cartProduct-stock">
+            <p>Avl Stock- {e.stock}</p>
+          </div>
+          <div className="custom-flex remove">
+            <p onClick={() => removeItem(e)}>Remove</p>
+          </div>
         </div>
       ))}
-      <div className="order">
-        <button>Place Order</button>
-      </div>
+      {currentUser && (
+        <>
+          <div className="order">
+            <button onClick={() => handleSubmit(cartData)}>Place Order</button>
+          </div>
+        </>
+      )}
     </div>
   );
 };

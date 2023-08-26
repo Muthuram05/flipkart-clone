@@ -20,7 +20,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 .ViewProduct .left .alter-image div img{
     width: 60px;
@@ -30,6 +29,18 @@
 .ViewProduct .left img{
     padding: 10px;
 }
+.ViewProduct .product{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.ViewProduct .product img{
+    width: 400px;
+    height: 400px;
+    object-fit: contain;
+}
+
 .ViewProduct .cart{
     padding: 18px 8px;
     border-radius: 2px;
@@ -46,6 +57,11 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+}
+.ViewProduct .cart.disable,.ViewProduct .buynow.disable{
+    background: #d5d7db;
+    pointer-events: none;
+    cursor: not-allowed;
 }
 .ViewProduct .buynow{
     background: #fb641b;
@@ -78,17 +94,25 @@
     display: flex;
     align-items: center;
 }
+.ViewProduct .right .rating p{
+    color: red;
+}
 .ViewProduct .right .rating span{
     display: flex;
     align-items: center;
     justify-content: center;
     color: #fff;
-    padding: 2px 4px 2px 6px;
+    padding:10px;
     border-radius: 3px;
-    width: 50px;
+    width: 80px;
+    height: 30px;
+    gap: 10px;
     font-weight: 500;
-    font-size: 12px;
+    font-size: 18px;
     background-color: #388e3c;
+}
+.ViewProduct .right .rating span .star{
+    font-size: 24px;
 }
 .ViewProduct .right .prize{
     margin-top: 10px;
@@ -102,7 +126,47 @@
 .ViewProduct .right .offers{
     margin-top: 10px;
 }
-.ViewProduct .right .offers div{
+
+.ViewProduct .right .offers li{
+    display: flex;
+    align-items: start;
     margin-top: 10px;
-    font-size: 20px;
+    font-size: 16px;
+}
+.ViewProduct .right .offers li img{
+    width: 20px;
+    height: 20px;
+}
+@media (max-width:1000px){
+    .ViewProduct{
+        width: 100%;
+        flex-direction: column;
+    }
+}
+@media (max-width:800px){
+    .ViewProduct{
+        width: 100%;
+        flex-direction: column;
+        padding: 0px;
+    }
+    .ViewProduct .left{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .ViewProduct .left .alter-image{
+        display: flex;
+    }
+    
+}
+
+@media (max-width:400px){
+    .ViewProduct .left .alter-image div{
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+    }
+    .ViewProduct .left .product div{
+        flex-direction: column;
+    }
 }

@@ -68,7 +68,7 @@ const Nav = () => {
               </div>
             </Tippy>
           ) : (
-            <button onClick={setloginWindow}>Login</button>
+            <button onClick={setloginWindow} >Login</button>
           )}
           <Link href="#" className="hide">
             Become a Seller
@@ -85,7 +85,8 @@ const Nav = () => {
             </div>
           </Tippy>
           <Link to="/cart" className="custom-flex">
-            <ShoppingCartIcon />
+            <ShoppingCartIcon style={{cursor:'pointer'}}/>
+            {currentUser ? 
             <span
               className="custom-flex"
               style={{
@@ -98,7 +99,7 @@ const Nav = () => {
               }}
             >
               {cartData.length}
-            </span>
+            </span> : null}
             <span className="hide" style={{color:'var(--color-white)'}}>Cart</span>
           </Link>
         </div>

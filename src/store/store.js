@@ -7,32 +7,17 @@ export const productsStore = create((set, get) => ({
   fetchData: (product) => {
     set((state) => ({ ...state, items: allData[product] }));
   },
-  Mobiles,
-  Electronic,
-  Beauty,
-  Furniture,
-  cartData: [
-    {
-      id: "m4",
-      name: "motorola edge 40",
-      image:
-        "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/2/m/o/edge-40-pay40030in-motorola-original-imagpqzchzhg6fex.jpeg?q=70",
-      rating: "4.2",
-      prize: "29999",
-      stock: 10,
-    },
-    {
-      id: "m5",
-      name: "apple iphone 14 plus",
-      image:
-        "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/m/o/b/-original-imaghx9qkugtbfrn.jpeg?q=70",
-      rating: "4.7",
-      prize: "80999",
-      stock: 10,
-    },
-  ],
+  productList :{
+    Mobiles,
+    Electronic,
+    Beauty,
+    Furniture
+  },
+  cartData: [],
   setloginWindow: () => set((state) => ({ loginWindow: !state.loginWindow })),
-  setCart: (data) => set((state) => ({ cartData: [...state.cartData, data] })),
+  setCart: (data) => set((state) => ({ cartData: [ ...data] })),
+  setEmptyCart: () => set((state)=> ({cartData: []})),
+  setAllCart: (data) => set((state) => ({ cartData: data })),
 }));
 
 export const userStore = create((set, get) => ({

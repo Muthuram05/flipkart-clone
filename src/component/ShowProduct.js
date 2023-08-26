@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import { productsStore } from "../store/store";
 import Loader from "./Loader";
+import NoData from "./NoData";
 
 const ShowProduct = () => {
   const { state } = useLocation();
@@ -16,7 +17,6 @@ const ShowProduct = () => {
   }
   // const [isRandomTrue, setRandomValue] = useRandomBooleanHook();
   const item = productsStore((state)=>state.items);
-  console.log(state)
   useState(()=>{
     document.title = `${state} | Flipkart.com`
   },[state])
@@ -39,7 +39,7 @@ const ShowProduct = () => {
             <span className="strick">{parseInt(e.prize) * 2 }</span>
             <span style={{color: '#388e3c'}}>50% off</span>
           </div>
-        )) : <Loader />}
+        )) : <NoData />}
       </div>
     </div>
   );

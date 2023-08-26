@@ -1,33 +1,35 @@
-import React, { useEffect } from 'react'
-import ImageSlider from './ImageSlider'
-import './Home.css';
-import { images } from '../data/Data';
-import { productsStore, userStore } from '../store/store';
-import ListData from './ListData';
+import React, { useEffect, useState } from "react";
+import ImageSlider from "./ImageSlider";
+import "./Home.css";
+import { images } from "../data/Data";
+import { productsStore, userStore } from "../store/store";
+import ListData from "./ListData";
+import Loader from "./Loader";
 const Home = () => {
-  useEffect(()=>{
-    document.title = "Online Shopping Site for Mobiles, Electronics, Furniture, Grocery, Lifestyle, Books & More. Best Offers!";
-    
-  },[]);
-
-  const {MobilesList,Electronic,Beauty,Furniture} = 
-  productsStore((state => ({ MobilesList: state.Mobiles, Electronic: state.Electronic,Beauty : state.Beauty,Furniture : state.Furniture}) ))
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    document.title =
+      "Online Shopping Site for Mobiles, Electronics, Furniture, Grocery, Lifestyle, Books & More. Best Offers!";
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, []);
+  const productList = productsStore((state) => state.productList);
   return (
-    <div className='Home'>    
-      <ImageSlider images={images} />
-      <ListData list={MobilesList} name={"Mobiles"}/>
-      <ListData list={Electronic} name={"Electronic"}/>
-      <ListData list={Beauty} name={"Beauty"}/>
-      <ListData list={Furniture} name={"Furniture"}/>
-      
+    <div className="Home">
+      {loading ? (
+        <Loader />
+      ) : (
+        <>
+          <ImageSlider images={images} />
+          <ListData list={productList["Mobiles"]} name={"Mobiles"} />
+          <ListData list={productList["Electronic"]} name={"Electronic"} />
+          <ListData list={productList["Beauty"]} name={"Beauty"} />
+          <ListData list={productList["Furniture"]} name={"Furniture"} />
+        </>
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default Home
-
-
-
-
-
-
+export default Home;

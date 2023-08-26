@@ -1,12 +1,14 @@
 import React from 'react'
 import './MoreData.css'
-import { userStore } from '../store/store'
+import { productsStore, userStore } from '../store/store'
 import { toast } from 'react-toastify';
 const MoreData = ({ data }) => {
   const setUser = userStore((state)=> state.setUser);
+  const setEmptyCart = productsStore((state)=> state.setEmptyCart)
   const logout = () =>{
     toast('Logout Sucessfully')
-    setUser(localStorage.removeItem('currentUser'))
+    setUser(localStorage.removeItem('currentUser'));
+    setEmptyCart([]);
   }
   return (
     <>
