@@ -9,7 +9,7 @@ const ListData = ({ name, list }) => {
     navigate("/products", { state: name });
   };
   const handleViewProduct = (data) =>{
-    navigate('/viewProduct',{state : data})
+    navigate('/viewProduct',{state : {data}})
   }
   return (
     <div className="ListData">

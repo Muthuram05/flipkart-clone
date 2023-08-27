@@ -9,21 +9,23 @@ import NoData from "./NoData";
 
 const ShowProduct = () => {
   const { state } = useLocation();
-  const fetchData = productsStore((state)=> state.fetchData);
-  fetchData(state)
+  console.log(state)
+  // const fetchData = productsStore((state)=> state.fetchData);
+  // fetchData(state)
   const navigate = useNavigate();
   const handleViewProduct = (data) =>{
-    navigate('/viewProduct',{state : data} )
+    navigate('/viewProduct',{state : {data,name: state}  } )
   }
   // const [isRandomTrue, setRandomValue] = useRandomBooleanHook();
-  const item = productsStore((state)=>state.items);
+  const productList = productsStore((state)=>state.productList);
+  console.log(productList);
   useState(()=>{
     document.title = `${state} | Flipkart.com`
   },[state])
   return (
     <div className="ShowProducts">
       <div className="products">
-        {item ? item.map((e) => (
+        {productList[state] ? productList[state].map((e) => (
           <div key={e.id} className="product" onClick={() => handleViewProduct(e)}>
             <img src={e.image} alt={e.name} />
             <h1 style={{ textTransform: "capitalize" }}>{e.name}</h1>

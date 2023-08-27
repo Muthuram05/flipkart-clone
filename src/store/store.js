@@ -3,21 +3,18 @@ import { Mobiles, Electronic, Beauty, Furniture, allData } from "../data/Data";
 
 export const productsStore = create((set, get) => ({
   loginWindow: false,
-  items: [],
-  fetchData: (product) => {
-    set((state) => ({ ...state, items: allData[product] }));
-  },
   productList :{
-    Mobiles,
-    Electronic,
-    Beauty,
-    Furniture
+    // Mobiles,
+    // Electronic,
+    // Beauty,
+    // Furniture
   },
   cartData: [],
+  setProduct : (data) => set((state) => ({productList : {...data}})),
   setloginWindow: () => set((state) => ({ loginWindow: !state.loginWindow })),
   setCart: (data) => set((state) => ({ cartData: [ ...data] })),
-  setEmptyCart: () => set((state)=> ({cartData: []})),
-  setAllCart: (data) => set((state) => ({ cartData: data })),
+  setEmptyCart: () => set(()=> ({cartData: []})),
+  setAllCart: (data) => set(() => ({ cartData: data })),
 }));
 
 export const userStore = create((set, get) => ({

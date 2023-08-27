@@ -11,7 +11,7 @@ const Cart = () => {
     document.title = "Shopping Cart | Flipkart.com";
   }, []);
   const handleSubmit = (data) => {
-    navigate("/checkout", { state: data });
+    navigate("/checkout", { state: {data : data,isCart : true } });
   };
   const removeItem = (e) => {
     let cartData = JSON.parse(localStorage.getItem(currentUser));

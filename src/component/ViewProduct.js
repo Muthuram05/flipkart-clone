@@ -7,7 +7,9 @@ import StarBorderIcon from "@mui/icons-material/StarBorder";
 import { productsStore, userStore } from "../store/store";
 import { toast } from "react-toastify";
 const ViewProduct = () => {
-  const { state } = useLocation();
+  const  location  = useLocation();
+  let state = location.state.data;
+  console.log(location.state)
   const navigate = useNavigate();
   const isLogin = userStore((state) => state.currentUser);
   const setCart = productsStore((state) => state.setCart);
@@ -34,7 +36,7 @@ const ViewProduct = () => {
     toast("Added to cart");
   };
   const handleBuy = (data) => {
-    navigate("/checkOut",{state:[data]});
+    navigate("/checkOut",{state:{data : [data],name: location.state.name}});
   };
 
   return (

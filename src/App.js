@@ -12,27 +12,35 @@ import Auth from "./component/Auth";
 import { productsStore, userStore } from "./store/store";
 import { ToastContainer } from "react-toastify";
 import CheckOut from "./component/CheckOut";
+import { allData } from "./data/Data";
+
 const App = () => {
   const login = productsStore((state) => state.loginWindow);
   const setloginWindow = productsStore((state) => state.setloginWindow);
   const getUser = userStore((state) => state.getUser);
   const setUser = userStore((state) => state.setUser);
   const setAllCart = productsStore((state) => state.setAllCart);
-  const currentUser = userStore((state)=>state.currentUser)
+  const currentUser = userStore((state) => state.currentUser);
+  const setProduct = productsStore((state)=>state.setProduct)
+  const productList = productsStore((state) => state.productList);
+
   useEffect(() => {
     getUser(localStorage.getItem("users") ?? []);
     setUser(localStorage.getItem("currentUser") ?? null);
     const currentUserInfo = localStorage.getItem("currentUser");
-
+    if (!localStorage.getItem("product")) {
+      localStorage.setItem("product", JSON.stringify(allData));
+    } else { 
+      setProduct(JSON.parse(localStorage.getItem('product')));  
+    }
     if (!currentUserInfo) {
       return;
     }
     let cartDataValue = localStorage.getItem(currentUserInfo);
     if (cartDataValue) {
       const updatedCartData = JSON.parse(cartDataValue);
-      
+
       setAllCart(updatedCartData);
-      
     }
   }, [currentUser]);
   return (

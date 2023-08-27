@@ -1,26 +1,39 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./CheckOut.css";
-import { userStore } from "../store/store";
+import { productsStore, userStore } from "../store/store";
 import { toast } from "react-toastify";
 import { useLocation, useNavigate } from "react-router-dom";
 const CheckOut = () => {
   const currentUser = userStore((state) => state.currentUser);
+  const productList = productsStore((state) => state.productList);
   const number = useRef();
   const mmyy = useRef();
   const cvv = useRef();
   const navigate = useNavigate();
-  const { state } = useLocation();
+  const location = useLocation();
+  const setEmptyCart = productsStore((state)=>state.setEmptyCart)
+  let state = location.state.data;
   const [prize, setprize] = useState(0);
-  console.log(state);
   const handlePay = () => {
     if (number.current.value && mmyy.current.value && cvv.current.value) {
       toast("Ordered Sucessfully");
       number.current.value = "";
       mmyy.current.value = "";
       cvv.current.value = "";
+      state.map((e)=>(
+        handleStockReduction(e.id)
+      ))
+      if(location.state.isCart){
+        setEmptyCart()
+        localStorage.removeItem(currentUser) 
+      }
       navigate("/");
+       
     }
   };
+  useEffect(() => {
+    document.title = "CheckOut | Flipkart";
+  });
   useEffect(() => {
     let val = 0;
     state.map((e) => {
@@ -28,7 +41,31 @@ const CheckOut = () => {
       return setprize(val);
     });
   }, []);
+  const handleStockReduction = (productId) => {
+    console.log("--");
+    for (const category in productList) {
+      const products = productList[category];
+      const productIndex = products.findIndex(
+        (product) => product.id === productId
+      );
 
+      if (productIndex !== -1 && products[productIndex].stock > 0) {
+        const updatedProducts = [...products];
+        updatedProducts[productIndex].stock -= 1;
+
+        // Update the state using the set function from the store
+        productsStore.setState((state) => ({
+          productList: {
+            ...state.productList,
+            [category]: updatedProducts,
+          },
+        }));
+        
+        break;
+      }
+    }
+    localStorage.setItem('product',JSON.stringify(productList));
+  };
   return (
     <div className="checkout">
       <div className="left">
