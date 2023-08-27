@@ -106,9 +106,31 @@
 .bottom-nav h1{
     font-size: 14px;
 }
+@media (max-width:1400px){
+    .Nav .links{
+        width: 40%;
+    }
+}
+@media (max-width: 1000px){
+    .Nav .links{
+        width: 50%;
+    }
+}
+@media (max-width:1200px){
+    .Nav .links{
+        display: flex;
+        height: 100%;
+        margin-left: 0px;
+        align-items: center;
+        justify-content: space-around;
+    }
+}
 @media (max-width:900px){
     .hide{
         display: none;
+    }
+    .Nav .links{
+        width: 55%;
     }
     .bottom-nav{
         overflow: scroll;
@@ -119,7 +141,9 @@
     .Nav .logo{
         width: 55%;
     }
-   
+    .Nav .links{
+        width: 45%;
+    }
     .bottom-nav::-webkit-scrollbar{
         display: none;
     }

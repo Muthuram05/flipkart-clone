@@ -340,6 +340,36 @@ export const Furniture = [
         stock: 7
     }
 ]
+export const Fashion = [
+  {
+    id:'f1',
+    name: 'Men Skinny Low',
+    image:'https://rukminim2.flixcart.com/image/612/612/xif0q/jean/d/v/v/-original-imagjczbguefwqhc.jpeg?q=70',
+    rating: '3.0',
+    prize: 332,
+    stock : 6
+  },
+  {
+    id:'f2',
+    name: 'Men Regular Fit',
+    image:'https://rukminim2.flixcart.com/image/832/832/xif0q/shopsy-trouser/t/o/h/34-dms001-formal-trouser-ks-brand-original-imag4dxfqjzhrwws.jpeg?q=70',
+    rating: '3.0',
+    prize: 467,
+    stock : 8
+  }
+]
+
+export const Appliances = [
+  {
+    id:'a1',
+    name:'Electric Kettle',
+    image:'https://rukminim2.flixcart.com/image/612/612/xif0q/electric-kettle/t/h/j/1-8l-zunvolt-original-imaghaexxjwnvhxa.jpeg?q=70',
+    rating: 4,
+    prize: 2222,
+    stock: 6
+  }
+]
+
 export const BottomNavData = [
   {
     name : 'Grocery',
@@ -384,5 +414,8 @@ export  const allData = {
   Mobiles,
   Electronic,
   Beauty,
-  Furniture
+  Furniture,
+  Fashion,
+  Appliances,
+  
 }

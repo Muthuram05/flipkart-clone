@@ -4,13 +4,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 const ListData = ({ name, list }) => {
   const navigate = useNavigate();
-  const listProduct = list.slice(0, 7);
+  const listProduct = list.slice(0, 8);
   const handleNavigate = () => {
     navigate("/products", { state: name });
   };
-  const handleViewProduct = (data) =>{
-    navigate('/viewProduct',{state : {data}})
-  }
+  const handleViewProduct = (data,random) => {
+    navigate("/viewProduct", { state: { data,random } });
+  };
+  const getRandomNumber = () => {
+    return Math.floor(Math.random() * 95) + 1;
+  };
   return (
     <div className="ListData">
       <div className="products-details">
@@ -21,17 +24,24 @@ const ListData = ({ name, list }) => {
           alt="product"
         />
       </div>
-      {listProduct.map((e, index) => (
-        <div className="products" onClick={()=>handleViewProduct(e)} key={e.id}>
-          <img src={e.image} alt={e.image} />
-          <h2>{e.name}</h2>
-          <span>$ {e.prize}</span>
-          <div style={{display:"flex",alignItems:"center"}}>
-            <h3 style={{paddingBottom:"2px"}}>{e.rating}</h3>
-            <StarRating rating={e.rating} />
+      {listProduct.map((e, index) => {
+        const random = getRandomNumber();
+        return (
+          <div
+            className="products"
+            onClick={() => handleViewProduct(e,random)}
+            key={e.id}
+          >
+            <img src={e.image} alt={e.image} />
+            <h2>{e.name}</h2>
+            <span>$ {e.prize}</span>
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <h3 style={{ paddingBottom: "2px" }}>{e.rating}</h3>
+              <StarRating rating={e.rating} />
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 };

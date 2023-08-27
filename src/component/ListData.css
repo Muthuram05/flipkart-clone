@@ -6,6 +6,7 @@
     width: 100%;
     overflow: scroll;
     height: 366px;
+    position: relative;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 .ListData::-webkit-scrollbar{
@@ -13,13 +14,17 @@
     display: none;
 }
 .ListData .products-details{
+    z-index: 10;
+    background-color: #fff;
     min-width: 230px;
+    position: sticky;
+    left: 0;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    
+    overflow: hidden;
 }
 .ListData .products-details h2{
     font-size: 30px;
@@ -69,6 +74,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    text-transform: capitalize;
 }
 .ListData .products span{
     margin-top: 15px;

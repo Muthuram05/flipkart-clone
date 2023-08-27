@@ -6,29 +6,37 @@ import { useLocation, useNavigate } from "react-router-dom";
 const CheckOut = () => {
   const currentUser = userStore((state) => state.currentUser);
   const productList = productsStore((state) => state.productList);
+  const cartData = productsStore((state) => state.cartData);
   const number = useRef();
   const mmyy = useRef();
   const cvv = useRef();
   const navigate = useNavigate();
   const location = useLocation();
-  const setEmptyCart = productsStore((state)=>state.setEmptyCart)
+  const setEmptyCart = productsStore((state) => state.setEmptyCart);
   let state = location.state.data;
   const [prize, setprize] = useState(0);
   const handlePay = () => {
     if (number.current.value && mmyy.current.value && cvv.current.value) {
-      toast("Ordered Sucessfully");
-      number.current.value = "";
-      mmyy.current.value = "";
-      cvv.current.value = "";
-      state.map((e)=>(
-        handleStockReduction(e.id)
-      ))
-      if(location.state.isCart){
-        setEmptyCart()
-        localStorage.removeItem(currentUser) 
+      try {
+        number.current.value = "";
+        mmyy.current.value = "";
+        cvv.current.value = "";
+        state.map((e) => handleStockReduction(e.id));
+        // const updateCart = cartData.map((e) => {
+        //   if (e.id === "") {
+
+        //   }
+        //   return;
+        // });
+        if (location.state.isCart) {
+          setEmptyCart();
+          localStorage.removeItem(currentUser);
+        }
+        navigate("/");
+        toast("Ordered Sucessfully");
+      } catch (error) {
+        navigate('/')
       }
-      navigate("/");
-       
     }
   };
   useEffect(() => {
@@ -42,7 +50,6 @@ const CheckOut = () => {
     });
   }, []);
   const handleStockReduction = (productId) => {
-    console.log("--");
     for (const category in productList) {
       const products = productList[category];
       const productIndex = products.findIndex(
@@ -60,11 +67,14 @@ const CheckOut = () => {
             [category]: updatedProducts,
           },
         }));
-        
+
         break;
       }
+      else{
+        throw toast('out of stock');
+      }
     }
-    localStorage.setItem('product',JSON.stringify(productList));
+    localStorage.setItem("product", JSON.stringify(productList));
   };
   return (
     <div className="checkout">

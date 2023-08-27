@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 const ViewProduct = () => {
   const  location  = useLocation();
   let state = location.state.data;
-  console.log(location.state)
+  let random = location.state.random;
   const navigate = useNavigate();
   const isLogin = userStore((state) => state.currentUser);
   const setCart = productsStore((state) => state.setCart);
@@ -70,7 +70,7 @@ const ViewProduct = () => {
                   Add to Cart
                 </button>
                 <button
-                  className={`buynow custom-flex ${isLogin ? null : "disable"}`}
+                  className={`buynow custom-flex ${isLogin ? null : "disable"} ${state.stock ? null : "disable"}`}
                   onClick={() => handleBuy(state)}
                 >
                   <FlashOnIcon />
@@ -86,15 +86,15 @@ const ViewProduct = () => {
                 {state.rating}
                 <StarBorderIcon className="star"/>
               </span>
-              <p>Only {state.stock} left</p>
+              <p>{state.stock ? `Only ${state.stock} left` : "Out of stock"}</p>
             </div>
             <div className="prize">
               <p>{state.prize}</p>
               <div className="discount">
                 <span style={{ textDecoration: "line-through" }}>
-                  {state.prize * 2}{" "}
+                  {parseInt(state.prize) +(parseInt(state.prize) * random) / 100}{" "}
                 </span>{" "}
-                <span style={{ color: "#388e3c" }}>50% off</span>
+                <span style={{ color: "#388e3c" }}>{random}% off</span>
               </div>
             </div>
 

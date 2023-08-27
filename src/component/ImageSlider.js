@@ -12,13 +12,14 @@ const ImageSlider = ({ images }) => {
     );
   }
   useEffect(() => {
-    const interval = setInterval(nextSlide, 3000); // Auto-scroll every 2 seconds
+    const interval = setInterval( nextSlide, 3000); // Auto-scroll every 2 seconds
 
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="slider">
+      
       <img src={images[currentIndex]} alt={`Slide ${currentIndex}`} />
       <div onClick={nextSlide} id="next-btn">
         <svg

@@ -1,5 +1,4 @@
 import { create } from "zustand";
-import { Mobiles, Electronic, Beauty, Furniture, allData } from "../data/Data";
 
 export const productsStore = create((set, get) => ({
   loginWindow: false,

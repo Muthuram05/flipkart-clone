@@ -26,6 +26,8 @@ const Home = () => {
           <ListData list={productList["Electronic"]} name={"Electronic"} />
           <ListData list={productList["Beauty"]} name={"Beauty"} />
           <ListData list={productList["Furniture"]} name={"Furniture"} />
+          <ListData list={productList["Fashion"]} name={"Fashion"} />
+          <ListData list={productList["Appliances"]} name={"Furniture"} />
         </>
       )}
     </div>
