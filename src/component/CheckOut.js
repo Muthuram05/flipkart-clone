@@ -143,7 +143,7 @@ const CheckOut = () => {
           </div>
 
           <h4>
-            Amount Payable<span>{prize}</span>
+            Amount Payable<span style={{float:'right'}}>{prize}</span>
           </h4>
         </div>
         <div className="safe">
