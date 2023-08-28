@@ -11,6 +11,7 @@ const ViewProduct = () => {
   let state = location.state.data;
   let random = location.state.random;
   const navigate = useNavigate();
+  const cartData = productsStore((state)=>state.cartdata)
   const isLogin = userStore((state) => state.currentUser);
   const setCart = productsStore((state) => state.setCart);
   const handleCart = (e) => {
@@ -38,7 +39,6 @@ const ViewProduct = () => {
   const handleBuy = (data) => {
     navigate("/checkOut",{state:{data : [data],name: location.state.name}});
   };
-
   return (
     <>
       {state ? (
@@ -62,6 +62,7 @@ const ViewProduct = () => {
               <img src={state.image} alt={state.name} />
 
               <div className="custom-flex">
+               
                 <button
                   className={`cart custom-flex ${isLogin ? null : "disable"}`}
                   onClick={() => handleCart(state)}

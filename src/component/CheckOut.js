@@ -22,12 +22,16 @@ const CheckOut = () => {
         mmyy.current.value = "";
         cvv.current.value = "";
         state.map((e) => handleStockReduction(e.id));
-        // const updateCart = cartData.map((e) => {
-        //   if (e.id === "") {
+       
+        const updatedCartData = cartData.filter((cartItem) =>
+          state.every((e) => e.id !== cartItem.id)
+        );
 
-        //   }
-        //   return;
-        // });
+        // Update the cart data in the store
+        productsStore.setState({
+          cartData: updatedCartData,
+        });
+        localStorage.setItem(currentUser,JSON.stringify(updatedCartData))
         if (location.state.isCart) {
           setEmptyCart();
           localStorage.removeItem(currentUser);
@@ -35,7 +39,7 @@ const CheckOut = () => {
         navigate("/");
         toast("Ordered Sucessfully");
       } catch (error) {
-        navigate('/')
+        navigate("/");
       }
     }
   };
@@ -69,9 +73,8 @@ const CheckOut = () => {
         }));
 
         break;
-      }
-      else{
-        throw toast('out of stock');
+      } else {
+        throw toast("out of stock");
       }
     }
     localStorage.setItem("product", JSON.stringify(productList));

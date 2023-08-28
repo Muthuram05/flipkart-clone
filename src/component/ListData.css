@@ -84,3 +84,8 @@
 .ListData .products h3{
     margin-top: 12px;
 }
+@media (max-width:900px){
+    .ListData .products-details{
+        position: relative;
+    }
+}

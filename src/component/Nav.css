@@ -79,8 +79,8 @@
     margin-Left: 10px;
 }
 .Nav .links .moreData:hover img{
-    transform: rotate(90deg);
-    transition: 1s;
+    transform: rotate(-270deg);
+    transition: 0.1s;
 }
 .bottom-nav{
     padding-top: 56px;

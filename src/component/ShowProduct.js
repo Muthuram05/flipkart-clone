@@ -47,7 +47,7 @@ const ShowProduct = () => {
                   />
                 </div>
                 <span> ₹ {parseInt(e.prize)}</span>
-                <span className="strick">{parseInt(e.prize) +(parseInt(e.prize) * random) / 100 }</span>
+                <span className="strick">{parseInt(parseInt(e.prize) +(parseInt(e.prize) * random) / 100 )}</span>
                 <span style={{ color: "#388e3c" }}>{random}% off</span>
               </div>
             );
